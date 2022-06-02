@@ -10,7 +10,11 @@ const weatherForecast = (latitude, longitude, callback) => {
     } else {
       callback(
         undefined,
-        `${body.current.weather_descriptions[0]}. It is currently ${body.current.temperature} degrees out, and it feels like ${body.current.feelslike}`
+        `${body.current.weather_descriptions[0]}. It is currently ${body.current.temperature} degrees out, and it feels like ${body.current.feelslike}.
+        The wind speed is currently ${body.current.wind_speed} km/h .
+        There is a ${body.current.precip}% chance of rain.
+        The UV index is currently ${body.current.uv_index}.
+        The Cloud Cover is ${body.current.cloudcover}%.`
       );
     }
   });
